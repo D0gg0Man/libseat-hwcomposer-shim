@@ -1,0 +1,20 @@
+Source: libseat-hwcomposer-shim
+Section: libs
+Priority: optional
+Maintainer: D0gg0Man <dogman@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13),
+               libdrm-dev,
+               libegl-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/D0gg0Man/libseat-hwcomposer-shim
+Rules-Requires-Root: no
+
+Package: libseat-hwcomposer-shim
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libegl1
+Description: libseat/DRM/EGL/HWC2 shims for phoc on FuriOS Mali/HWC2
+ LD_PRELOAD shim providing: fake libseat API (O_NONBLOCK device opens),
+ DRM capability patches, EGL visual-id fix, HWC2 vsync shim, and
+ hwcomposer buffer count/fence shims.
+ .
+ Tested on Furiphone FLX1 (Dimensity 900, Mali-G68 MC4) running FuriOS.

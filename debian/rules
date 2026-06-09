@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+	$(MAKE) LIBDIR=/usr/lib/aarch64-linux-gnu
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/libseat-hwcomposer-shim \
+	                LIBDIR=/usr/lib/aarch64-linux-gnu
+
+override_dh_auto_test:
